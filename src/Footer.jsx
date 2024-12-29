@@ -1,7 +1,11 @@
 import React from "react";
 
 function Footer() {
-  return <div></div>;
+  return (
+    <div className="box-border flex items-center justify-center p-4 text-white bg-indigo-600 ">
+      All &copy; Copyrights @2024
+    </div>
+  );
 }
 
 export default Footer;
