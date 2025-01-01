@@ -48,17 +48,12 @@ function AboutMe() {
             My Coding Journey
           </h2>
           <p>
-            <span class="font-semibold">Introduction to Coding:</span> I was
-            introduced to coding by My Schoole Principal "Gunaya sir".
-          </p>
-          <p>
             <span class="font-semibold">When I Started Coding:</span> I started
             coding in 2024 class 11th February, .
           </p>
           <p>
             <span class="font-semibold">First Learnings:</span> My initial
-            learnings were [mention the tools, software, or languages you
-            started with, such as HTML, Word, Excel].
+            learnings HTML.
           </p>
         </section>
 
@@ -69,10 +64,6 @@ function AboutMe() {
           <p>
             <span class="font-semibold">Joining CodeYogi:</span> I joined
             CodeYogi in February 2024.
-          </p>
-          <p>
-            <span class="font-semibold">Introduction to CodeYogi:</span> I came
-            to know about CodeYogi through by My Schoole Principal "Gunaya sir".
           </p>
           <p>
             <span class="font-semibold">Learnings at CodeYogi:</span> I have
@@ -97,7 +88,7 @@ function AboutMe() {
           </p>
           <p>
             <span class="font-semibold">Other Skills:</span> Apart from coding,
-            I have also gained knowledge in ms-word , Telly Excel.
+            I have also gained knowledge in ms-word , Telly, Excel.
           </p>
         </section>
 
