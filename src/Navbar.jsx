@@ -8,7 +8,7 @@ function Navbar() {
         HOME
       </Link>
       <Link to="/AboutMe" className="text-3xl font-bold text-white">
-        About Me
+        ABOUT Me
       </Link>
     </div>
   );
