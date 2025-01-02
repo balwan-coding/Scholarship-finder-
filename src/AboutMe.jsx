@@ -27,11 +27,18 @@ function AboutMe() {
           <p>
             <span class="font-semibold">Location:</span> Dhaturiyaram sonktch
           </p>
+          <p>
+            <span class="font-semibold">Phone Number:</span> 7067010548
+          </p>
+          <p>
+            <span class="font-semibold">Gmail:</span>{" "}
+            balwansinghrajput1708@gmail.com
+          </p>
 
           <h3 class="mt-4 font-semibold">Family Information:</h3>
           <p>
             <span class="font-semibold">Family Members:</span> My family members
-            Fathe Motner Brother and Me
+            Father, Mother, Brother and Me
           </p>
           <p>
             <span class="font-semibold">Father's Occupation:</span> My Father is
