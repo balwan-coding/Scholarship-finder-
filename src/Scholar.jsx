@@ -18,7 +18,6 @@ function Scholar() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Filter scholarships based on user input
     const filteredScholarships = mockScholarships.filter((scholar) => {
       return (
         scholar.EducationLevel === formData.EducationLevel &&
