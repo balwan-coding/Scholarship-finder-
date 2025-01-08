@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ScCart from "./ScCart";
 import { mockScholarships } from "./api";
+import "./styles.css";
 
 function Scholar() {
   const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ function Scholar() {
 
   return (
     <div className="flex flex-col items-center min-h-screen gap-5 bg-indigo-500">
-      <div className="flex flex-col w-4/5 gap-2 m-5">
+      <div className="flex flex-col w-4/5 gap-2 m-5 fade-in">
         <label className="text-xl text-white" htmlFor="EducationLevel">
           Education Level
         </label>
@@ -85,7 +86,7 @@ function Scholar() {
 
         <button
           onClick={handleSubmit}
-          className="p-1 text-xl text-white bg-red-600 rounded-2xl"
+          className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
         >
           Find Scholarships
         </button>
