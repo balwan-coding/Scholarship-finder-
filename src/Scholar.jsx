@@ -93,7 +93,7 @@ function Scholar() {
       </div>
       <div className="flex flex-col items-center justify-center w-full p-3 mt-3 mb-3 bg-white rounded-3xl">
         {scholarships.length > 0 ? (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {scholarships.map((scholar, index) => (
               <ScCart key={index} scholar={scholar} />
             ))}
