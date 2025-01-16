@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ScCart from "./ScCart";
 import { mockScholarships } from "./api";
 import "./styles.css";
+import CustomAlert from "./CustomAlert"; // CustomAlert import
 
 function Scholar() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function Scholar() {
   });
 
   const [scholarships, setScholarships] = useState([]);
+  const [alertMessage, setAlertMessage] = useState(""); // State for alert message
+  const [showAlert, setShowAlert] = useState(false); // State for alert visibility
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
@@ -28,10 +31,15 @@ function Scholar() {
     });
 
     if (filteredScholarships.length === 0) {
-      alert(`No scholarships found for the selected criteria."`);
+      setAlertMessage(`No scholarships found for the selected criteria.`);
+      setShowAlert(true); // Show custom alert if no scholarships are found
     }
 
     setScholarships(filteredScholarships);
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false); // Close the custom alert
   };
 
   return (
@@ -93,6 +101,12 @@ function Scholar() {
           Find Scholarships
         </button>
       </div>
+
+      {/* Display Custom Alert if necessary */}
+      {showAlert && (
+        <CustomAlert message={alertMessage} onClose={handleCloseAlert} />
+      )}
+
       <div className="flex flex-col items-center justify-center w-full p-3 mt-3 mb-3 bg-white rounded-3xl">
         {scholarships.length > 0 ? (
           <div className="flex flex-wrap justify-center gap-3">
