@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ScCart from "./ScCart";
 import { mockScholarships } from "./api";
 import "./styles.css";
-import CustomAlert from "./CustomAlert"; // CustomAlert import
+import CustomAlert from "./CustomAlert";
 
 function Scholar() {
   const [formData, setFormData] = useState({
@@ -12,8 +12,8 @@ function Scholar() {
   });
 
   const [scholarships, setScholarships] = useState([]);
-  const [alertMessage, setAlertMessage] = useState(""); // State for alert message
-  const [showAlert, setShowAlert] = useState(false); // State for alert visibility
+  const [alertMessage, setAlertMessage] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
@@ -32,14 +32,14 @@ function Scholar() {
 
     if (filteredScholarships.length === 0) {
       setAlertMessage(`No scholarships found for the selected criteria.`);
-      setShowAlert(true); // Show custom alert if no scholarships are found
+      setShowAlert(true);
     }
 
     setScholarships(filteredScholarships);
   };
 
   const handleCloseAlert = () => {
-    setShowAlert(false); // Close the custom alert
+    setShowAlert(false);
   };
 
   return (
@@ -102,7 +102,6 @@ function Scholar() {
         </button>
       </div>
 
-      {/* Display Custom Alert if necessary */}
       {showAlert && (
         <CustomAlert message={alertMessage} onClose={handleCloseAlert} />
       )}
