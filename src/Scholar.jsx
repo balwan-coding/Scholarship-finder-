@@ -27,6 +27,10 @@ function Scholar() {
       );
     });
 
+    if (filteredScholarships.length === 0) {
+      alert(`No scholarships found for the selected criteria."`);
+    }
+
     setScholarships(filteredScholarships);
   };
 
