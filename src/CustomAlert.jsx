@@ -1,18 +1,26 @@
-// CustomAlert.js
-import React from "react";
+import React, { useEffect } from "react";
+import { AiFillExclamationCircle } from "react-icons/ai";
+import { RxCross2 } from "react-icons/rx";
 
 function CustomAlert({ message, onClose }) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose(); // Close alert after 5 seconds
+    }, 3000);
+
+    // Cleanup the timer if the component is unmounted or if the alert is closed
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
   return (
     <div
-      className="fixed top-0 z-50 p-5 text-white transform -translate-x-1/2 bg-red-600 rounded-lg shadow-lg left-1/2"
+      className="fixed z-50 flex items-center gap-4 p-5 text-white bg-red-600 rounded-lg shadow-lg top-4"
       style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}
     >
+      <AiFillExclamationCircle className="text-lg " />
       <p className="text-lg">{message}</p>
-      <button
-        onClick={onClose}
-        className="px-4 py-2 mt-3 text-black bg-white rounded-lg shadow-md hover:bg-gray-200"
-      >
-        Close
+      <button onClick={onClose} className="">
+        <RxCross2 className="text-3xl" />
       </button>
     </div>
   );
