@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { AiFillExclamationCircle } from "react-icons/ai";
+import { AiOutlineWarning } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 
 function CustomAlert({ message, onClose }) {
@@ -17,7 +17,7 @@ function CustomAlert({ message, onClose }) {
       className="fixed z-50 flex items-center gap-4 p-5 text-white bg-red-600 rounded-lg shadow-lg top-4"
       style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}
     >
-      <AiFillExclamationCircle className="text-lg " />
+      <AiOutlineWarning className="text-3xl" />
       <p className="text-lg">{message}</p>
       <button onClick={onClose} className="">
         <RxCross2 className="text-3xl" />
