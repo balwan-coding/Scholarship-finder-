@@ -22,11 +22,11 @@ function AboutMe() {
           </p>
           <p>
             <span className="font-semibold">School Name:</span> Government Model
-            School, Bheesha Kedee Sonktch
+            School, Bheesa Kedee Sonktch
           </p>
           <p>
             <span className="font-semibold">Location:</span> Dhaturiyaram
-            sonktch
+            sonaktch
           </p>
           <p>
             <span className="font-semibold">Phone Number:</span> 7067010548
