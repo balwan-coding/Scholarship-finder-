@@ -3,7 +3,7 @@ import "./styles.css";
 
 function ScCart({ scholar }) {
   return (
-    <div className="flex flex-col items-start justify-start p-4 bg-gray-200 rounded-lg max-w-96 fade-in">
+    <div className="flex flex-col items-start justify-start p-4 bg-gray-200 rounded-lg hover:transform hover:shadow-2xl max-w-96 fade-in">
       <h1 className="text-xl font-bold text-blue-600">{scholar.Name}</h1>
       <p className="text-gray-700">{scholar.Benefits}</p>
       <p className="text-gray-700">Gender: {scholar.Gender}</p>

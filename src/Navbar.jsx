@@ -18,13 +18,13 @@ function Navbar() {
       <div className="justify-between flex-1 hidden space-x-6 sm:flex">
         <Link
           to="/"
-          className="text-xl font-bold text-white hover:text-indigo-300 sm:text-3xl md:text-3xl lg:text-3xl"
+          className="text-xl font-bold text-white hover:text-indigo-100 sm:text-3xl md:text-3xl lg:text-3xl"
         >
           HOME
         </Link>
         <Link
           to="/AboutMe"
-          className="text-xl font-bold text-white hover:text-indigo-300 sm:text-3xl md:text-3xl lg:text-3xl"
+          className="text-xl font-bold text-white hover:text-indigo-100 sm:text-3xl md:text-3xl lg:text-3xl"
         >
           ABOUT Me
         </Link>

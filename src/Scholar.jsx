@@ -54,7 +54,9 @@ function Scholar() {
           value={formData.EducationLevel}
           onChange={handleChange}
         >
-          <option value="">Select Education Level</option>
+          <option defaultValue={"Select Education Level"} value="">
+            Select Education Level
+          </option>
           <option value="School">School</option>
           <option value="Undergraduate">Undergraduate</option>
           <option value="Postgraduate">Postgraduate</option>
@@ -71,7 +73,9 @@ function Scholar() {
           value={formData.Gender}
           onChange={handleChange}
         >
-          <option value="">Select Gender</option>
+          <option defaultValue={"Select Gender"} value="">
+            Select Gender
+          </option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="All">All</option>
@@ -86,7 +90,9 @@ function Scholar() {
           value={formData.Cast}
           onChange={handleChange}
         >
-          <option value="">Select Cast</option>
+          <option defaultValue={"Select Cast"} value="">
+            Select Cast
+          </option>
           <option value="General">General</option>
           <option value="OBC">OBC</option>
           <option value="SC">SC</option>
@@ -106,7 +112,7 @@ function Scholar() {
         <CustomAlert message={alertMessage} onClose={handleCloseAlert} />
       )}
 
-      <div className="flex flex-col items-center justify-center w-full p-3 mt-3 mb-3 bg-white rounded-3xl">
+      <div className="flex flex-col items-center justify-center w-full p-3 mt-3 mb-3 bg-indigo-200 rounded-3xl">
         {scholarships.length > 0 ? (
           <div className="flex flex-wrap justify-center gap-3">
             {scholarships.map((scholar, index) => (
@@ -114,7 +120,7 @@ function Scholar() {
             ))}
           </div>
         ) : (
-          <p className="mt-4 text-black">
+          <p className="mt-4 text-xl font-semibold text-center text-black md:text-2xl">
             No scholarships found for the selected criteria.
           </p>
         )}
