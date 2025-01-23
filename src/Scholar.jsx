@@ -65,7 +65,7 @@ function Scholar() {
         <div className="flex gap-4">
           <button
             onClick={() => {
-              setSearchMode("search"), setScholarships("");
+              setSearchMode("search"), setScholarships([]);
             }}
             className="p-1 text-xl text-white bg-green-500 hover:bg-green-600 rounded-2xl"
           >
@@ -73,7 +73,7 @@ function Scholar() {
           </button>
           <button
             onClick={() => {
-              setSearchMode("filter"), setScholarships("");
+              setSearchMode("filter"), setScholarships([]);
             }}
             className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
           >
