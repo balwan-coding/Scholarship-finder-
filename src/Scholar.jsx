@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import ScCart from "./ScCart";
+import FilterForm from "./FilterForm";
+import SearchInput from "./SearchInput";
+import Alert from "./Alert";
+import ScholarshipCards from "./ScholarshipCards";
 import { mockScholarships } from "./api";
-import "./styles.css";
-import CustomAlert from "./CustomAlert";
 
 function Scholar() {
   const [formData, setFormData] = useState({
@@ -67,7 +68,8 @@ function Scholar() {
         <div className="flex gap-4">
           <button
             onClick={() => {
-              setSearchMode("search"), setScholarships("");
+              setSearchMode("search");
+              setScholarships([]);
             }}
             className="p-1 text-xl text-white bg-green-500 hover:bg-green-600 rounded-2xl"
           >
@@ -75,7 +77,8 @@ function Scholar() {
           </button>
           <button
             onClick={() => {
-              setSearchMode("filter"), setScholarships("");
+              setSearchMode("filter");
+              setScholarships([]);
             }}
             className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
           >
@@ -83,120 +86,22 @@ function Scholar() {
           </button>
         </div>
         {searchMode === "filter" && (
-          <>
-            <label
-              className="text-xl text-white cursor-pointer"
-              htmlFor="EducationLevel"
-            >
-              Education Level
-            </label>
-            <select
-              className="p-1 text-xl text-black bg-transparent border-2 border-r-4 border-indigo-800 cursor-pointer rounded-2xl"
-              id="EducationLevel"
-              value={formData.EducationLevel}
-              onChange={handleChange}
-            >
-              <option defaultValue={"Select Education Level"} value="">
-                Select Education Level
-              </option>
-              <option value="School">School</option>
-              <option value="Undergraduate">Undergraduate</option>
-              <option value="Postgraduate">Postgraduate</option>
-              <option value="Diploma">Diploma</option>
-              <option value="Higher Education">Higher Education</option>
-            </select>
-
-            <label
-              className="text-xl text-white cursor-pointer"
-              htmlFor="Gender"
-            >
-              Gender
-            </label>
-            <select
-              className="p-1 text-xl text-black bg-transparent border-2 border-r-4 border-indigo-800 cursor-pointer rounded-2xl"
-              id="Gender"
-              value={formData.Gender}
-              onChange={handleChange}
-            >
-              <option defaultValue={"Select Gender"} value="">
-                Select Gender
-              </option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="All">All</option>
-            </select>
-
-            <label className="text-xl text-white cursor-pointer" htmlFor="Cast">
-              Cast
-            </label>
-            <select
-              className="p-1 text-xl text-black bg-transparent border-2 border-r-4 border-indigo-800 cursor-pointer rounded-2xl"
-              id="Cast"
-              value={formData.Cast}
-              onChange={handleChange}
-            >
-              <option defaultValue={"Select Cast"} value="">
-                Select Cast
-              </option>
-              <option value="General">General</option>
-              <option value="OBC">OBC</option>
-              <option value="SC">SC</option>
-              <option value="ST">ST</option>
-              <option value="All">All</option>
-            </select>
-
-            <button
-              onClick={handleFilterSubmit}
-              className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
-            >
-              Filter Search
-            </button>
-          </>
+          <FilterForm
+            formData={formData}
+            handleChange={handleChange}
+            handleFilterSubmit={handleFilterSubmit}
+          />
         )}
-
         {searchMode === "search" && (
-          <>
-            <label
-              className="text-xl text-white cursor-pointer"
-              htmlFor="searchInput"
-            >
-              Search by Education Level
-            </label>
-            <input
-              type="text"
-              id="searchInput"
-              value={searchInput}
-              onChange={handleSearchInputChange}
-              className="p-1 text-xl text-black bg-transparent border-2 border-r-4 border-indigo-800 rounded-2xl"
-              placeholder="Type education level (e.g., School)"
-            />
-            <button
-              onClick={handleSearchSubmit}
-              className="p-1 text-xl text-white bg-green-500 hover:bg-green-600 rounded-2xl"
-            >
-              Search
-            </button>
-          </>
+          <SearchInput
+            searchInput={searchInput}
+            handleSearchInputChange={handleSearchInputChange}
+            handleSearchSubmit={handleSearchSubmit}
+          />
         )}
       </div>
-
-      {showAlert && (
-        <CustomAlert message={alertMessage} onClose={handleCloseAlert} />
-      )}
-
-      <div className="flex flex-col items-center justify-center w-full p-3 mt-3 mb-3 bg-indigo-200 rounded-3xl">
-        {scholarships.length > 0 ? (
-          <div className="flex flex-wrap justify-center gap-3">
-            {scholarships.map((scholar, index) => (
-              <ScCart key={index} scholar={scholar} />
-            ))}
-          </div>
-        ) : (
-          <p className="mt-4 text-xl font-semibold text-center text-black md:text-2xl">
-            No scholarships found for the selected criteria.
-          </p>
-        )}
-      </div>
+      {showAlert && <Alert message={alertMessage} onClose={handleCloseAlert} />}
+      <ScholarshipCards scholarships={scholarships} />
     </div>
   );
 }

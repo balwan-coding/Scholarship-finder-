@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { AiOutlineWarning } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 
-function CustomAlert({ message, onClose }) {
+function Alert({ message, onClose }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose(); // Close alert after 5 seconds
@@ -26,4 +26,4 @@ function CustomAlert({ message, onClose }) {
   );
 }
 
-export default CustomAlert;
+export default Alert;
