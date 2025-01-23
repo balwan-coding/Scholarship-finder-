@@ -27,7 +27,9 @@ function Scholar() {
 
   const handleSearchSubmit = () => {
     const filteredScholarships = mockScholarships.filter((scholar) =>
-      scholar.EducationLevel.toLowerCase().includes(searchInput.toLowerCase())
+      scholar.EducationLevel.toLowerCase()
+        .trim()
+        .includes(searchInput.toLowerCase())
     );
 
     if (filteredScholarships.length === 0) {
