@@ -27,6 +27,12 @@ function Scholar() {
   };
 
   const handleSearchSubmit = () => {
+    if (!searchInput.trim()) {
+      setAlertMessage("Plese Enter Education Level");
+      setShowAlert(true);
+      return;
+    }
+
     const filteredScholarships = mockScholarships.filter((scholar) =>
       scholar.EducationLevel.toLowerCase()
         .trim()
