@@ -2,7 +2,7 @@ import React from "react";
 
 function FilterForm({ formData, handleChange, handleFilterSubmit }) {
   return (
-    <>
+    <div className="flex flex-col gap-2 fade-in">
       <label
         className="text-xl text-white cursor-pointer"
         htmlFor="EducationLevel"
@@ -61,7 +61,7 @@ function FilterForm({ formData, handleChange, handleFilterSubmit }) {
       >
         Filter Search
       </button>
-    </>
+    </div>
   );
 }
 

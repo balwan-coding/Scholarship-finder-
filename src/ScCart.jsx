@@ -19,9 +19,6 @@ function ScCart({ scholar }) {
         <span className="font-semibold text-gray-800">
           Domicile Certificate,
         </span>
-        <span className="font-semibold text-gray-800">
-          Domicile Certificate,
-        </span>
         <span className="font-semibold text-gray-800">Address Proof,</span>
         <span className="font-semibold text-gray-800">Birth Certificate,</span>
         <span className="font-semibold text-gray-800">

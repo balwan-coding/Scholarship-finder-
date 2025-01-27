@@ -6,7 +6,7 @@ function SearchInput({
   handleSearchSubmit,
 }) {
   return (
-    <>
+    <div className="flex flex-col gap-2 fade-in">
       <label
         className="text-xl text-white cursor-pointer"
         htmlFor="searchInput"
@@ -27,7 +27,7 @@ function SearchInput({
       >
         Search
       </button>
-    </>
+    </div>
   );
 }
 
