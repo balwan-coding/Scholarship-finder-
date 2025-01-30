@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import FilterForm from "./FilterForm";
-import SearchInput from "./SearchInput";
 import Alert from "./Alert";
 import ScholarshipCards from "./ScholarshipCards";
 import { mockScholarships } from "./api";
+import { Link } from "react-router-dom";
 
 function Scholar() {
   const [formData, setFormData] = useState({
@@ -15,36 +15,9 @@ function Scholar() {
   const [scholarships, setScholarships] = useState([]);
   const [alertMessage, setAlertMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  const [searchMode, setSearchMode] = useState("filter");
-  const [searchInput, setSearchInput] = useState("");
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
-  };
-
-  const handleSearchInputChange = (event) => {
-    setSearchInput(event.target.value);
-  };
-
-  const handleSearchSubmit = () => {
-    if (!searchInput.trim()) {
-      setAlertMessage("Plese Enter Education Level");
-      setShowAlert(true);
-      return;
-    }
-
-    const filteredScholarships = mockScholarships.filter((scholar) =>
-      scholar.EducationLevel.toLowerCase()
-        .trim()
-        .includes(searchInput.toLowerCase().trim())
-    );
-
-    if (filteredScholarships.length === 0) {
-      setAlertMessage(`No scholarships found matching "${searchInput}".`);
-      setShowAlert(true);
-    } else {
-      setScholarships(filteredScholarships);
-    }
   };
 
   const handleFilterSubmit = () => {
@@ -71,40 +44,26 @@ function Scholar() {
   return (
     <div className="flex flex-col items-center min-h-screen gap-5 bg-indigo-500">
       <div className="flex flex-col w-4/5 gap-2 m-5 fade-in">
-        <div className="flex gap-4">
-          <button
-            onClick={() => {
-              setSearchMode("search");
-              setScholarships([]);
-            }}
-            className="p-1 text-xl text-white bg-green-500 hover:bg-green-600 rounded-2xl"
+        <div className="flex justify-between">
+          <Link
+            className="flex items-center justify-center gap-2 p-3 mt-10 text-xl font-extrabold text-white transition-colors duration-300 ease-in-out bg-gray-700 border-none rounded-lg hover:bg-gray-800 fade-in"
+            to="/"
           >
-            Search
-          </button>
-          <button
-            onClick={() => {
-              setSearchMode("filter");
-              setScholarships([]);
-            }}
-            className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
+            Previous
+          </Link>
+          <Link
+            className="flex items-center justify-center gap-2 p-3 mt-10 text-xl font-extrabold text-white transition-colors duration-300 ease-in-out bg-gray-700 border-none rounded-lg hover:bg-gray-800 fade-in"
+            to="/AboutMe"
           >
-            Filter Search
-          </button>
+            Next
+          </Link>
         </div>
-        {searchMode === "filter" && (
-          <FilterForm
-            formData={formData}
-            handleChange={handleChange}
-            handleFilterSubmit={handleFilterSubmit}
-          />
-        )}
-        {searchMode === "search" && (
-          <SearchInput
-            searchInput={searchInput}
-            handleSearchInputChange={handleSearchInputChange}
-            handleSearchSubmit={handleSearchSubmit}
-          />
-        )}
+
+        <FilterForm
+          formData={formData}
+          handleChange={handleChange}
+          handleFilterSubmit={handleFilterSubmit}
+        />
       </div>
       {showAlert && <Alert message={alertMessage} onClose={handleCloseAlert} />}
       <ScholarshipCards scholarships={scholarships} />
