@@ -23,7 +23,7 @@ function SearchInput({
       />
       <button
         onClick={handleSearchSubmit}
-        className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
+        className="p-1 text-xl text-white bg-green-500 hover:bg-green-600 rounded-2xl"
       >
         Find Scholarship
       </button>

@@ -78,14 +78,14 @@ function Scholar() {
       <div className="flex flex-col w-4/5 gap-2 m-5 fade-in">
         <div className="flex justify-between">
           <Link
-            className="flex items-center justify-center gap-2 p-3 mt-10 text-xl font-extrabold text-white bg-transparent border border-black rounded-lg hover:bg-gray-800 fade-in"
+            className="flex items-center justify-center gap-2 p-1 mt-10 text-xl font-extrabold text-white bg-transparent border border-black rounded-lg sm:p-3 hover:bg-gray-800 fade-in"
             to="/"
           >
             <HiArrowLongLeft />
             back
           </Link>
           <Link
-            className="flex items-center justify-center gap-2 p-3 mt-10 text-xl font-extrabold text-white bg-transparent border border-black rounded-lg hover:bg-gray-800 fade-in"
+            className="flex items-center justify-center gap-2 p-1 mt-10 text-xl font-extrabold text-white bg-transparent border border-black rounded-lg sm:p-3 hover:bg-gray-800 fade-in"
             to="/AboutMe"
           >
             Next <HiArrowSmallRight />
