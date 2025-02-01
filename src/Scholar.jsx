@@ -96,6 +96,8 @@ function Scholar() {
             onClick={() => {
               setSearchMode("search");
               setScholarships([]);
+              setSearchInput("");
+              setFormData({ EducationLevel: "", Gender: "", Cast: "" });
             }}
             className="p-1 text-xl text-white bg-orange-600 hover:bg-orange-700 rounded-2xl"
           >
@@ -105,6 +107,8 @@ function Scholar() {
             onClick={() => {
               setSearchMode("filter");
               setScholarships([]);
+              setSearchInput("");
+              setFormData({ EducationLevel: "", Gender: "", Cast: "" });
             }}
             className="p-1 text-xl text-white bg-orange-600 hover:bg-orange-700 rounded-2xl"
           >

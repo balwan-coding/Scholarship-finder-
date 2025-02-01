@@ -6,7 +6,10 @@ import { FaArrowRight } from "react-icons/fa";
 function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-5 bg-indigo-500">
-      <h1 className="items-center mt-6 text-2xl font-bold text-center text-white sm:text-5xl lg:text-5xl md:text-5xl fade-in">
+      <h1
+        className="relative mt-6 text-2xl font-bold text-center text-white sm:text-5xl lg:text-5xl md:text-5xl fade-in 
+               after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-1 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+      >
         Welcome To Apni Scholarships
       </h1>
 

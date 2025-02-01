@@ -2,14 +2,18 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(30px); /* Start slightly below */
+    transform: translateY(30px);
+    /* Start slightly below */
   }
+
   100% {
     opacity: 1;
-    transform: translateY(0); /* End at its normal position */
+    transform: translateY(0);
+    /* End at its normal position */
   }
 }
 
 .fade-in {
-  animation: fadeInUp 1.9s ease-out forwards; /* Apply the animation */
+  animation: fadeInUp 1s ease-out forwards;
+  /* Apply the animation */
 }
