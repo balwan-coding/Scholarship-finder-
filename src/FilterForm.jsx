@@ -59,7 +59,7 @@ function FilterForm({ formData, handleChange, handleFilterSubmit }) {
         onClick={handleFilterSubmit}
         className="p-1 text-xl text-white bg-red-500 hover:bg-red-600 rounded-2xl"
       >
-        Filter Search
+        Find Scholarship
       </button>
     </div>
   );

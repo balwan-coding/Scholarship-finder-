@@ -1,9 +1,20 @@
 import React from "react";
 import "./styles.css";
+import { HiArrowLongLeft } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 function AboutMe() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-indigo-500">
+    <div className="flex flex-col justify-center min-h-screen bg-indigo-500">
+      <div className="flex items-start ml-2">
+        <Link
+          className="flex items-center justify-center gap-2 p-3 mt-10 text-xl font-extrabold text-white bg-transparent border border-black rounded-lg hover:bg-gray-800 fade-in"
+          to="/Scholar"
+        >
+          <HiArrowLongLeft />
+          back
+        </Link>
+      </div>
       <div className="max-w-4xl p-6 m-3 mx-auto bg-white rounded-md shadow-md fade-in ">
         <h1 className="mb-6 text-3xl font-bold text-center text-blue-600">
           About Me
