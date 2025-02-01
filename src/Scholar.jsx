@@ -32,6 +32,7 @@ function Scholar() {
     if (!searchInput.trim()) {
       setAlertMessage("Plese Enter Education Level");
       setShowAlert(true);
+      setScholarships([]);
       return;
     }
     const filteredScholarships = mockScholarships.filter((scholar) =>
