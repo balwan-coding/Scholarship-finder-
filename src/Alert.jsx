@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 function Alert({ message, onClose }) {
   useEffect(() => {
     const timer = setTimeout(() => {
-      onClose(); // Close alert after 5 seconds
+      onClose();
     }, 3000);
 
     // Cleanup the timer if the component is unmounted or if the alert is closed

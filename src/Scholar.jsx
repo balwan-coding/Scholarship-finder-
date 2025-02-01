@@ -43,8 +43,10 @@ function Scholar() {
     if (filteredScholarships.length === 0) {
       setAlertMessage(`No scholarships found matching "${searchInput}".`);
       setShowAlert(true);
+      setScholarships([]);
     } else {
       setScholarships(filteredScholarships);
+      setShowAlert(false);
     }
   };
 
@@ -65,8 +67,10 @@ function Scholar() {
     if (filteredScholarships.length === 0) {
       setAlertMessage(`No scholarships found for the selected criteria.`);
       setShowAlert(true);
+      setScholarships([]);
     } else {
       setScholarships(filteredScholarships);
+      setShowAlert(false);
     }
   };
 
