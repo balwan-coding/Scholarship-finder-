@@ -26,7 +26,7 @@ function Navbar() {
           to="/AboutMe"
           className="text-xl font-bold text-white hover:text-indigo-100 sm:text-3xl md:text-3xl lg:text-3xl"
         >
-          About Me
+          ABOUT ME
         </Link>
       </div>
     </div>

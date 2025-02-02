@@ -8,7 +8,7 @@ function AboutMe() {
     <div className="flex flex-col justify-center min-h-screen bg-indigo-500">
       <div className="flex items-start ml-2">
         <Link
-          className="flex items-center justify-center gap-2 p-1 mt-10 text-xl font-extrabold text-white bg-transparent border border-black rounded-lg sm:p-3 hover:bg-gray-800 fade-in"
+          className="flex items-center justify-center gap-2 p-1 mt-10 text-xl font-extrabold text-white bg-transparent border-2 border-black rounded-lg sm:p-3 hover:bg-gray-800 fade-in"
           to="/Scholar"
         >
           <HiArrowLongLeft />
@@ -17,7 +17,7 @@ function AboutMe() {
       </div>
       <div className="max-w-4xl p-6 m-3 mx-auto bg-white rounded-md shadow-md fade-in ">
         <h1 className="mb-6 text-3xl font-bold text-center text-blue-600">
-          About Me
+          ABOUT ME
         </h1>
 
         <section className="mb-8">
