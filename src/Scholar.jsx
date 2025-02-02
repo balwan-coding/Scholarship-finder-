@@ -104,7 +104,7 @@ function Scholar() {
               setSearchInput("");
               setFormData({ EducationLevel: "", Gender: "", Cast: "" });
             }}
-            className="p-1 text-xl text-white bg-orange-600 hover:bg-orange-700 rounded-2xl"
+            className="p-1 text-xl text-white bg-rose-600 hover:bg-rose-700 rounded-2xl"
           >
             Search
           </button>
@@ -115,7 +115,7 @@ function Scholar() {
               setSearchInput("");
               setFormData({ EducationLevel: "", Gender: "", Cast: "" });
             }}
-            className="p-1 text-xl text-white bg-orange-600 hover:bg-orange-700 rounded-2xl"
+            className="p-1 text-xl text-white bg-rose-600 hover:bg-rose-700 rounded-2xl"
           >
             Filter Search
           </button>
