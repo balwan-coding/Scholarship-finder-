@@ -4,7 +4,6 @@ import Alert from "./Alert";
 import ScholarshipCards from "./ScholarshipCards";
 import { mockScholarships } from "./api";
 import { Link } from "react-router-dom";
-import SearchInput from "./SearchInput";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import { HiArrowLongLeft } from "react-icons/hi2";
 
@@ -18,33 +17,9 @@ function Scholar() {
   const [scholarships, setScholarships] = useState([]);
   const [alertMessage, setAlertMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  const [searchMode, setSearchMode] = useState("filter");
-  const [searchInput, setSearchInput] = useState("");
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
-  };
-  const handleSearchInputChange = (event) => {
-    const value = event.target.value.trim();
-    setSearchInput(value);
-
-    if (!value) {
-      setScholarships([]);
-      return;
-    }
-
-    const filteredScholarships = mockScholarships.filter((scholar) =>
-      scholar.EducationLevel.toLowerCase().includes(value.toLowerCase())
-    );
-
-    if (filteredScholarships.length === 0) {
-      setAlertMessage(`No scholarships found matching "${value}".`);
-      setShowAlert(true);
-      setScholarships([]);
-    } else {
-      setScholarships(filteredScholarships);
-      setShowAlert(false);
-    }
   };
 
   const handleFilterSubmit = () => {
@@ -93,45 +68,12 @@ function Scholar() {
             Next <HiArrowSmallRight />
           </Link>
         </div>
-        <div className="flex gap-6">
-          <button
-            onClick={() => {
-              setSearchMode("search");
-              setScholarships([]);
-              setSearchInput("");
-              setFormData({ EducationLevel: "", Gender: "", Cast: "" });
-            }}
-            className="p-1 text-xl text-white bg-rose-600 hover:bg-rose-700 rounded-2xl"
-          >
-            Search
-          </button>
-          <button
-            onClick={() => {
-              setSearchMode("filter");
-              setScholarships([]);
-              setSearchInput("");
-              setFormData({ EducationLevel: "", Gender: "", Cast: "" });
-            }}
-            className="p-1 text-xl text-white bg-rose-600 hover:bg-rose-700 rounded-2xl"
-          >
-            Filter Search
-          </button>
-        </div>
 
-        {searchMode === "filter" && (
-          <FilterForm
-            formData={formData}
-            handleChange={handleChange}
-            handleFilterSubmit={handleFilterSubmit}
-          />
-        )}
-
-        {searchMode === "search" && (
-          <SearchInput
-            searchInput={searchInput}
-            handleSearchInputChange={handleSearchInputChange}
-          />
-        )}
+        <FilterForm
+          formData={formData}
+          handleChange={handleChange}
+          handleFilterSubmit={handleFilterSubmit}
+        />
       </div>
       {showAlert && <Alert message={alertMessage} onClose={handleCloseAlert} />}
       <ScholarshipCards scholarships={scholarships} />
