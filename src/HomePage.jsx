@@ -40,9 +40,9 @@ function HomePage() {
           organizations.
         </li>
         <li>
-          <strong>Filter and search options:</strong> The app allows students to
-          search for scholarships based on different categories such as subject,
-          course, country, and eligibility criteria.
+          <strong>Filter options:</strong> The app allows students to search for
+          scholarships based on different categories such as subject, course,
+          country, and eligibility criteria.
         </li>
         <li>
           <strong>Updates on new scholarships:</strong> The app is regularly
