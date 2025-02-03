@@ -1,10 +1,6 @@
 import React from "react";
 
-function SearchInput({
-  searchInput,
-  handleSearchInputChange,
-  handleSearchSubmit,
-}) {
+function SearchInput({ searchInput, handleSearchInputChange }) {
   return (
     <div className="flex flex-col gap-2 fade-in">
       <label
@@ -21,12 +17,6 @@ function SearchInput({
         className="p-1 text-xl text-black bg-transparent border-2 border-r-4 border-indigo-800 rounded-2xl"
         placeholder="Type education level (e.g., School)"
       />
-      <button
-        onClick={handleSearchSubmit}
-        className="p-1 text-xl text-white bg-green-500 hover:bg-green-600 rounded-2xl"
-      >
-        Find Scholarship
-      </button>
     </div>
   );
 }

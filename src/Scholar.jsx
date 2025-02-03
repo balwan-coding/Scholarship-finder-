@@ -24,24 +24,21 @@ function Scholar() {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
-
   const handleSearchInputChange = (event) => {
-    setSearchInput(event.target.value);
-  };
-  const handleSearchSubmit = () => {
-    if (!searchInput.trim()) {
-      setAlertMessage("Plese Enter Education Level");
-      setShowAlert(true);
+    const value = event.target.value.trim();
+    setSearchInput(value);
+
+    if (!value) {
       setScholarships([]);
       return;
     }
+
     const filteredScholarships = mockScholarships.filter((scholar) =>
-      scholar.EducationLevel.toLowerCase()
-        .trim()
-        .includes(searchInput.toLowerCase().trim())
+      scholar.EducationLevel.toLowerCase().includes(value.toLowerCase())
     );
+
     if (filteredScholarships.length === 0) {
-      setAlertMessage(`No scholarships found matching "${searchInput}".`);
+      setAlertMessage(`No scholarships found matching "${value}".`);
       setShowAlert(true);
       setScholarships([]);
     } else {
@@ -133,7 +130,6 @@ function Scholar() {
           <SearchInput
             searchInput={searchInput}
             handleSearchInputChange={handleSearchInputChange}
-            handleSearchSubmit={handleSearchSubmit}
           />
         )}
       </div>
