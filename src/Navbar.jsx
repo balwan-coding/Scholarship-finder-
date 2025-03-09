@@ -1,18 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdHome } from "react-icons/md";
-import { FaRegUserCircle } from "react-icons/fa";
+import Siderbar from "./siderbar";
 
 function Navbar() {
   return (
     <div className="box-border flex items-center justify-between p-4 bg-indigo-600">
       <div className="flex items-center justify-between flex-1 sm:hidden">
-        <Link to="/" className="font-bold text-white ">
-          <MdHome className="text-5xl" />
-        </Link>
-        <Link to="/AboutMe" className="font-bold text-white ">
-          <FaRegUserCircle className="text-5xl" />
-        </Link>
+        <Siderbar />
       </div>
 
       <div className="justify-between flex-1 hidden space-x-6 sm:flex">
