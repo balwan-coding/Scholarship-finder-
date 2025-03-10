@@ -5,12 +5,10 @@ import { Route, Routes } from "react-router-dom";
 import Scholar from "./Scholar";
 import Footer from "./Footer";
 import AboutMe from "./AboutMe";
-// import Siderbar from "./siderbar";
 
 function App() {
   return (
     <>
-      {/* <Siderbar /> */}
       <Navbar />
       <Routes>
         <Route index element={<HomePage />}></Route>
