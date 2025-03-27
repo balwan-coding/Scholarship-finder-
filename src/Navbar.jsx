@@ -24,7 +24,7 @@ function Navbar() {
         </button>
         <div className="fixed z-50 flex h-screen">
           <div
-            className={`fixed top-0 left-0 h-full w-52 bg-blue-600 text-white transition-all ${
+            className={`fixed top-0 left-0 h-full w-48 bg-blue-600 text-white transition-all ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
